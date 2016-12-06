@@ -1,0 +1,26 @@
+The goal of this assignment is to give you some experience with simple sensor processing on your simulated robot.  There are a lot of ways to solve the problem outlined in this assignment, and we'll leave it up to you to pick one.  You should feel free to discuss the problem with your peers, and to see what they're up to.
+
+Preparation
+You should know how to make your robot move around the world.  If your own code for this doesn't work as expected, you can ask one of your peers for help, and can even use their code if they're OK with it (and you cite your sources).
+
+Assignment
+Put five circular obstacles, of known size, into your Stage world.  Make sure that you can reach each of the five obstacles from the starting position of the robot.
+Write a node that recognizes the circular obstacles using laser range-finder data, and places an rviz marker at the position where the obstacle was detected.  There should only be on marker per obstacle.
+Once your detector is working properly, teleoperate your robot around the world and show it finding and putting markers over the obstacles.  Make a short video (using a screen capture program) to demonstrate this.
+Write some code that will autonomously drive your robot around the world, trying to find the obstacles.  Remember, you're not allowed to use the actual positions of the obstacles in this code; you have to have an explicit exploration strategy.  Make a video of this in action.
+Grading
+1 point for making the obstacles.  3 points for a working obstacle detector.  1 point for demonstrating detection with a video.  3 points for autonomous exploration code.  1 point for demonstrating the autonomous exploration code.  1 point for autonomously finding all five of the obstacles, without knowing their locations ahead of time, for a starting position the TA picks.
+
+Thoughts
+Stage allows you to put objects into the world by specifying them in the world file.  Or, you can draw directly on the map that's being used by Stage, and put them in like that.  The first method is preferable, but either will do.
+You're not allowed to hard-code the positions of the obstacles for any part of this assignment.
+To detect the obstacles, you can:
+Write some code yourself to find them in a laser scan.  Think about what the laser scan will look like when it hits one of the obstacles.
+Use a Hough transform, probably on the (x,y) positions of the laser contacts.  Since you know the size of the obstacles, all you have to find is their (x, y) position.
+Some other technique that I haven't thought of.
+The Rules
+It's fine to collaborate and talk about the problem, or even see the solutions to previous assignments.  However, everything that you turn in for this assignment should be your own code.
+
+What to Hand In
+Same as last time: a tarball with everything we need to run your code, and two videos of it in action.
+
